@@ -18,10 +18,14 @@ def on_button_pressed_b():
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
 def blinken(rate: number):
+    global pos
+    pos = 0
     led.plot(pos, 0)
+    basic.pause(rate)
     led.unplot(pos, 0)
 pos = 0
 led.plot(0, 0)
+blinken(10)
 pos = 0
 
 def on_forever():

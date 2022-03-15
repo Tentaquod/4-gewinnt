@@ -13,15 +13,16 @@ input.onButtonPressed(Button.B, function () {
     led.toggle(pos, 0)
 })
 function blinken (rate: number) {
-    pos = 0
     led.plot(pos, 0)
     basic.pause(rate)
     led.unplot(pos, 0)
 }
 let pos = 0
 led.plot(0, 0)
-blinken(10)
 pos = 0
+loops.everyInterval(500, function () {
+    blinken(500)
+})
 basic.forever(function () {
 	
 })
